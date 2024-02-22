@@ -1,6 +1,5 @@
 package com.springboot.blogapp.service;
 
-import java.util.List;
 
 import com.springboot.blogapp.payload.PostDto;
 import com.springboot.blogapp.payload.PostResponse;
