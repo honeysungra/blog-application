@@ -36,7 +36,7 @@ public class CommentController {
 	@GetMapping("/posts/{postId}/comments/{commentId}")
 	public ResponseEntity<CommentDto> getCommentById(@PathVariable (value="postId") Long postId,
 			@PathVariable(value="commentId") Long commentId
-			) {
+			) { 
 		return ResponseEntity.ok(commentService.getCommentById(postId, commentId));
 	}
 	@PutMapping("/posts/{postId}/comments/{commentId}")
