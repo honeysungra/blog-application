@@ -20,6 +20,8 @@ import com.springboot.blogapp.payload.PostResponse;
 import com.springboot.blogapp.service.PostService;
 import com.springboot.blogapp.utils.AppConstants;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/posts")
 public class PostController {
@@ -31,7 +33,7 @@ public class PostController {
 	}
 	//create Blog Post Rest API
 	@PostMapping
-	public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto){
+	public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostDto postDto){
 		return new ResponseEntity<PostDto>(postService.createPost(postDto), HttpStatus.CREATED);
 	}
 	//Get All Blog Post Rest API
@@ -52,7 +54,7 @@ public class PostController {
 	}
 	//update post by id
 	@PutMapping("/{id}")
-	public ResponseEntity<PostDto> updatePost(@RequestBody PostDto postDto,@PathVariable long id){
+	public ResponseEntity<PostDto> updatePost(@Valid @RequestBody PostDto postDto,@PathVariable long id){
 //		PostDto postResponse= postService.updatePost(postDto, id);
 //		return new ResponseEntity<>(postResponse,HttpStatus.OK);
 		return ResponseEntity.ok(postService.updatePost(postDto, id));
