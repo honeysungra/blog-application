@@ -28,7 +28,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/posts")
+@RequestMapping("/api/v1/posts")
 @Tag(name = "CRUD API for POST Resource")
 public class PostController {
 	private PostService postService;
